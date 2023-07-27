@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="551.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rest.ProductsController">
+   <children>
+      <Label prefHeight="23.0" prefWidth="850.0" style="-fx-background-color: #B0EB30;" />
+      <TableView fx:id="tableProducts" layoutX="264.0" layoutY="80.0" prefHeight="436.0" prefWidth="564.0">
+        <columns>
+          <TableColumn fx:id="colId" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="colDescription" minWidth="200.0" prefWidth="75.0" text="Açıklama" />
+            <TableColumn fx:id="colPrice" prefWidth="75.0" text="Fiyat" />
+            <TableColumn fx:id="colCategory" prefWidth="75.0" text="Kategori" />
+            <TableColumn fx:id="colStatus" prefWidth="138.0" text="Durum" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnUpdate" disable="true" layoutX="264.0" layoutY="32.0" mnemonicParsing="false" onAction="#editEntry" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: #30EBB8;" text="Güncelle" />
+      <Button fx:id="btnDelete" disable="true" layoutX="351.0" layoutY="32.0" mnemonicParsing="false" onAction="#deleteEntry" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: #30EBB8;" text="Sil" />
+      <VBox layoutX="14.0" layoutY="31.0" prefHeight="509.0" prefWidth="226.0" spacing="10.0">
+         <children>
+            <Pane id="imageBox" prefHeight="165.0" prefWidth="226.0">
+               <children>
+                  <ImageView fx:id="ivProduct" fitHeight="166.0" fitWidth="226.0" pickOnBounds="true" preserveRatio="true" />
+               </children></Pane>
+            <Button fx:id="btnBrowse" layoutX="10.0" layoutY="408.0" mnemonicParsing="false" onAction="#handleBrowseImage" prefHeight="25.0" prefWidth="227.0" style="-fx-background-color: #30EBB8;" text="Seç" />
+            <TextField fx:id="etId" alignment="CENTER" editable="false" promptText="ID - AUTO INCREMENT" />
+            <TextField fx:id="etBarcode" alignment="CENTER" layoutX="10.0" layoutY="255.0" promptText="Barkod" />
+            <TextField fx:id="etDescription" alignment="CENTER" layoutX="10.0" layoutY="10.0" promptText="Açıklama" />
+            <TextField fx:id="etPrice" alignment="CENTER" layoutX="10.0" layoutY="45.0" promptText="Fiyat" />
+            <HBox prefHeight="24.0" prefWidth="188.0" spacing="10.0">
+               <children>
+                  <ComboBox fx:id="cbCategories" prefHeight="25.0" prefWidth="159.0" promptText="Kategori" />
+                  <Button fx:id="btnSave1" mnemonicParsing="false" onAction="#actionAddCategory" prefHeight="25.0" prefWidth="55.0" style="-fx-background-color: #30EBB8;" text="Ekle" />
+               </children>
+            </HBox>
+            <ComboBox fx:id="cbWeight" prefHeight="25.0" prefWidth="228.0" promptText="Gramajı Artırılabilir mi?" />
+            <ComboBox fx:id="cbStatus" prefHeight="25.0" prefWidth="226.0" promptText="Durum" />
+            <Button fx:id="btnSave" mnemonicParsing="false" onAction="#saveProduct" prefHeight="25.0" prefWidth="227.0" style="-fx-background-color: #30EBB8;" text="Kaydet" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
